@@ -9,7 +9,10 @@ exe/main.o: src/main.c | exe
 exe/utilities.o: src/utilities.c | exe
 	gcc -c -o exe/utilities.o src/utilities.c
 
-FILEO = exe/main.o exe/utilities.o
+exe/solver.o: src/solver.c | exe
+	gcc -c -o exe/solver.o src/solver.c
+
+FILEO = exe/main.o exe/utilities.o exe/solver.o
 
 program: $(FILEO)
 	gcc -o main $(FILEO)

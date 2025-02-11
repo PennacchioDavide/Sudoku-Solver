@@ -6,7 +6,14 @@ void print_sudoku(int *s, int len)
     {
         for (int j = 0; j < len; j++)
         {
-            printf("%d ", *(s + i * len + j));
+            if (*(s + i * len + j) == 0)
+            {
+                printf("- ");
+            }
+            else
+            {
+                printf("%d ", *(s + i * len + j));
+            }
         }
         printf("\n");
     }
